@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    font-size: calc(1vw + 1em);
+    --textColor: rgba(0, 0, 0, 0.7);
+    --zindexOfHeader: 10;
+    --zindexOfNavigation: 20;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--textColor);
+}
+
+.wrapper, header {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+.text-center {
+    text-align: center;
+}
+/* *header: begin */
+header {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    padding: 0.3em 0.5em;
+    z-index: var(--zindexOfHeader);
+    background-color: #F0F7F7;
+}
+
+.logo {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.6rem;
+    color: var(--textColor);
+}
+
+.menu__icon {
+    position: absolute;
+    height: 1.5em;
+    width: 1.6em;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    cursor: pointer;
+}
+
+.menu__icon>.icon__bar {
+    height: .3em;
+    border-radius: 10em;
+    background-color: #3498DB;
+    position: relative;
+    transition: .2s;
+}
+
+.menu__icon>.icon__bar::before {
+    right: 106%;
+    position: absolute;
+    content: '';
+    height: .3em;
+    width: .3em;
+    border-radius: 450%;
+    background-color: #3498DB;
+}
+
+.menu__icon>.icon__bar+.icon__bar {
+    margin-top: calc(0.6em / 2);
+}
+
+.menu__icon.active .icon__bar--1 {
+    transform: translateY(.5em) rotate(-45deg);
+}
+
+.menu__icon.active .icon__bar--2 {
+    opacity: 0;
+    ;
+}
+
+.menu__icon.active .icon__bar--3 {
+    transform: translateY(-.5em) rotate(45deg);
+}
+/* *header: end */
+/* * global navigation: begin */
+.navigation {
+    position: relative;
+    z-index: var(--zindexOfNavigation);
+}
+
+ul {
+    list-style: none;
+}
+
+.navigation__list-link {
+    position: fixed;
+    /* top: calc(-2.4em * 4 - 25px); */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 60%;
+    background-color: #202020;
+    transition: .2s ease-out;
+    overflow: hidden;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation.active .navigation__list-link {
+    transform: translateX(0);
+}
+
+.navigation__link {
+    display: block;
+    padding: 0.7em 2em;
+    color: #f7f7f7;
+    font-size: 1.2rem;
+}
+
+/* * global navigation: end */
+
+/* * banner: begin */
+.banner {
+    background-color: #F0F7F7;
+    padding: 5em 0.5em 3em;
+    position: relative;
+}
+
+h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--textColor);
+    letter-spacing: 0.1em;
+}
+
+h1~p {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.banner .graphic {
+    height: 10em;
+    margin-top: 2em;
+}
+.banner__top .graphic {
+    margin-bottom: 5em;
+}
+.banner .graphic img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.banner .graphic_inner {
+    height: 100%;
+    position: relative;
+    max-width: max-content;
+    margin: 10px auto;
+}
+
+.banner .graphic__apartment {
+    position: relative;
+    z-index: 2;
+}
+
+.banner .graphic__tree {
+    position: absolute;
+    width: 3em;
+    z-index: 2;
+}
+
+.banner .graphic__tree--1 {
+    top: 65%;
+    right: 81%;
+}
+.banner .graphic__tree--2 {
+    top: 65%;
+    right: 81%;
+    width: 3.5em;
+}
+.banner .graphic__tree--3 {
+    top: 70%;
+    right: -10%;
+}
+.banner .graphic__tree--4 {
+    top: 80%;
+    right: 15%;
+}
+.banner .graphic__shadow {
+    height: 11em;
+    width: 11em;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.svg img {
+    width: 100%;
+    height: 100%;
+}
+/* * banner: end */
+/* * main */
+main {
+    height: 100vh;
+}
+h2 {
+    padding-bottom: 1em;
+}
+section {
+    padding-bottom: 3em;
+}
+/**how it works: begin*/
+.work {
+    padding: 0 0.5em;
+    margin-bottom: 2em;
+}
+.work__steps {
+    display: grid;
+    gap: 15px;
+}
+.work__card {
+    display: flex;
+    align-items: center;
+    padding: 1em; 
+    border-radius: 1.5em;
+}
+.work__card > p {
+    color: white;
+    margin-left: 1em;
+    font-size: 1rem;
+}
+.work__card > i {
+    padding: 0.6em;
+    height: 2.2em;
+    width: 2.2em;
+    background-color:white;
+    border-radius: 50%;
+}
+.work__card--search {
+    background-color: #fabc60;
+}
+.work__card--search > i { 
+    color: #fabc60;
+}
+.work__card--contact {
+    background-color: #3183FF;
+}
+.work__card--contact>i {
+    color: #3183FF;
+}
+.work__card--agree {
+    background-color: #027D7C;
+}
+.work__card--agree > i {
+    color: #027D7C;
+}
+
+/**how it works: end */
+/* * product: begin */
+.product {
+    margin-top: -20px;
+    background-color: #EAF6FF;
+    padding: 0 0.5em;
+}

@@ -2,7 +2,7 @@
 
 :root {
     scroll-behavior: smooth;
-    font-size: calc(1vw + 0.7em);
+    font-size: calc(1vw + 0.8em);
     --textColor: rgba(0, 0, 0, 0.7);
     --textColor: rgba(0, 0, 0, 0.7);
     --zindexOfFilter: 10;
@@ -710,7 +710,7 @@ section {
     }
 
     .desktop_navigation .navigation__link {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         position: relative;
     }
     .desktop_navigation .navigation__link::before {

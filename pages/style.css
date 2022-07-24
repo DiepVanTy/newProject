@@ -2,7 +2,7 @@
 
 :root {
     scroll-behavior: smooth;
-    font-size: calc(1vw + 0.7em);
+    font-size: calc(1vw + 0.8em);
     --textColor: rgba(0, 0, 0, 0.7);
     --textColor: rgba(0, 0, 0, 0.7);
     --zindexOfFilter: 10;
@@ -237,35 +237,90 @@ ul {
 
 /* * main */
 main {
-    display: flex;
     padding-top: 3.2em;
-    height: 100vh;
 }
-main > .main__content {
+
+main>.main__content {
     flex: 2;
+    padding: 1em 0;
 }
+
 h1 {
     font-size: 1.5rem;
     text-align: center;
     text-transform: uppercase;
     color: var(--textColor);
     letter-spacing: 0.1em;
-    padding: 1em;
 }
+
 h2 {
     font-size: 1rem;
+    margin: 1em 0 0.5em;
 }
+
 .main__content .info_contact {
-    width: 60%;
-    margin: 0 auto;
+    padding: 1em;
 }
+
 .main__content .contact .contact__item a {
-    display: block;
+    display: inline-block;
     padding: 0.5em;
 }
+
 .main__content .contact .image_icon {
     width: 2.5em;
 }
+
+.main__content .message form {
+    width: 50%;
+    position: relative;
+}
+
+.main__content .inputbox {
+    position: relative;
+    margin: 1.5em 0 0.5em 0.5em;
+    background-color: white;
+}
+
+.main__content .inputbox input {
+    position: absolute;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 0.3em 0.2em;
+    width: 100%;
+    height: 100%;
+    border: 1px solid grey;
+    outline: none;`
+    border-radius: 0.3em;
+}
+
+.main__content .inputbox span {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.4em 0.1em;
+    color: grey;
+    transform: scale(0.9);
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.main__content .inputbox input:focus~span,
+.main__content .inputbox input:valid~span {
+    transform: translateY(-1.5em) scale(0.8);
+}
+
+.main__content .inputbox textarea {
+    padding: 0.5em;
+    font-size: 1rem;
+}
+
+.main__content form input[type="submit"] {
+    color: white;
+    background-color: dodgerblue;
+    position: absolute;
+    right: 0;
+}
+
 /* * icon: begin */
 .fa-facebook-f,
 .fa-facebook {
@@ -279,14 +334,16 @@ h2 {
 .fa-envelope {
     color: #e69b2b;
 }
+
 /* * icon: end */
-main > .map {
+main>.map {
     flex: 3;
     width: 100%;
-    height: 100%;
+    height: 50vh;
 }
+
 .map iframe {
-    min-height: 100%;
+    height: 100%;
     width: 100%;
 }
 
@@ -373,6 +430,7 @@ main > .map {
 @media screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
 
 @media screen and (min-width: 63.9375em) {
+
     .desktop_navigation {
         display: block;
         flex: 2;
@@ -386,7 +444,7 @@ main > .map {
     }
 
     .desktop_navigation .navigation__link {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         position: relative;
     }
 
@@ -419,5 +477,31 @@ main > .map {
 
     .menu__icon {
         display: none;
+    }
+
+
+    main {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-top: 3.2em;
+    }
+
+    .main__content .info_contact {
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    .main__content .message form {
+        width: 100%;
+        position: relative;
+    }
+
+    main>.main__content {
+        flex: 2;
+    }
+
+    main>.map {
+        flex: 3;
+        height: calc(100vh - 3.2em) ;
     }
 }

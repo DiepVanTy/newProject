@@ -17,14 +17,17 @@
     <div class="wrapper">
         <header id="header" class="flex-center-between">
             <a class="logo" href="./index.html">real estate</a>
-            <div class="header__left flex-center-between">
-                <button onclick="openFilter()" class="button button--filter button--radius flex-center"><img
-                        class="image-icon" src="image/filter-icon.png" alt="">Lọc</button>
-
-                <a class="phone_num flex-center-between" href="tel:0394002409"><i
-                        class="fa-solid fa-phone"><span></span></i><span>0394002409</span></a>
-                <!-- https://www.flaticon.com/free-icon/whatsapp_2111728?related_id=2111728&origin=search# -->
-            </div>
+            <nav class="desktop_navigation ">
+                <ul class="navigation__list-link ">
+                    <li><a href="#" class="navigation__link active">Trang chủ</a></li>
+                    <li><a href="#" class="navigation__link">Sản phẩm cho thuê</a></li>
+                    <li><a href="#" class="navigation__link">Sản phẩm bán</a></li>
+                    <li><a href="./pages/contactpage.html" class="navigation__link">Thông tin liên hệ</a></li>
+                </ul>
+            </nav>
+            <a class="phone_num flex-center-between" href="tel:0394002409"><i
+                    class="fa-solid fa-phone"><span></span></i><span>0394002409</span></a>
+            <!-- https://www.flaticon.com/free-icon/whatsapp_2111728?related_id=2111728&origin=search# -->
             <div class=" menu__icon">
                 <div class="icon__bar icon__bar--1"></div>
                 <div class="icon__bar icon__bar--2"></div>
@@ -32,16 +35,17 @@
             </div>
         </header>
 
-        <nav class="navigation">
+        <nav class="mobile_navigation ">
 
             <ul class="navigation__list-link">
-                <a class="logo" href="./index.html" style="color: white ;">real estate</a>
+                <li><a class="logo" href="./index.html" style="color: white ;">real estate</a></li>
                 <li><a href="#" class="navigation__link">Trang chủ</a></li>
                 <li><a href="#" class="navigation__link">Sản phẩm cho thuê</a></li>
                 <li><a href="#" class="navigation__link">Sản phẩm bán</a></li>
                 <li><a href="#" class="navigation__link">Thông tin liên hệ</a></li>
             </ul>
         </nav>
+        <!-- banner: begin -->
         <div class="banner">
             <div class="banner__left">
                 <h1>Lorem, ipsum dolor.</h1>
@@ -112,7 +116,7 @@
                     <!--Sell : begin-->
                     <div class="tab__content tab__sell is-show">
                         <div class="product__card">
-                            <a href="./index.html" target="_blank" class="card__image ">
+                            <a href="./index.html" target="_blank" class="card__image card__image_1  ">
                                 <img class="slide_image" src="image/demo-apartment.jpg" alt="">
                                 <img class="slide_image" src="image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
                                 <img class="slide_image" src="image/demo-apartment.jpg" alt="">
@@ -153,7 +157,7 @@
                 <!--Rent : begin-->
                 <div class="tab__content tab__rent">
                     <div class="product__card">
-                        <a href="./index.html" target="_blank" class="card__image card__image_1">
+                        <a href="./index.html" target="_blank" class="card__image">
                             <img class="slide_image" src="image/demo-apartment.jpg" alt="">
                             <img class="slide_image" src="image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
                             <img class="slide_image" src="image/demo-apartment.jpg" alt="">
@@ -212,30 +216,29 @@
         </footer>
     </div>
 
-    <!-- <script>
-        // // slide image
-        // let index = 0;
-        // // let z = 1;
-        // slideImage();
-        // function slideImage() {
-        //     // let card = document.querySelectorAll('.card__image')
-        //     // let images = document.querySelectorAll(`.card__image_${z} .slide_image`);
-        //     let images = document.querySelectorAll(".card__image .slide_image");
-        //     for (let i = 0; i < images.length; i++) {
-        //         images[i].style.zIndex = i + 1;
-        //     }
-        //     index++;
-        //     //don't run the first picture
-        //     if (index == images.length) {
-        //         index = 1;
-        //         for (let i = 0; i < images.length; i++) {
-        //             images[i].style.left = null;
-        //         }
-        //     }
-        //     images[images.length - index].style.left = 100 + "%";
-        // }
-        // setTimeout(slideImage, 2000); 
-</script> -->
+    <script>
+        let productCard = () => {
+            let index = 0;
+            // let z = 1;
+            setTimeout(slideImage, 1);
+            function slideImage() {
+                // let card = document.querySelectorAll('.card__image')
+                // let images = document.querySelectorAll(`.card__image_${z} .slide_image`);
+                let images = document.querySelectorAll(".card__image_1 .slide_image");
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.opacity = 0;
+                }
+                images[index].style.opacity = 1;
+                setTimeout(slideImage, 3000);
+                index++;
+                //don't run the first picture
+                if (index == images.length) {
+                    index = 0;
+                }
+            }
+        }
+        productCard();
+    </script>
 </body>
 
 </html>

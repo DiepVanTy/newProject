@@ -24,19 +24,20 @@ body {
     color: var(--textColor);
     transition: 0.3s;
     /* background-color: #f0f7f7b4; */
+    min-height: 300vh;
 }
 
 ::-webkit-scrollbar {
     width: 5px;
-    padding: 1em;
+    height: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #e69b2b;
+    background-color: dodgerblue
 }
 
 ::-webkit-scrollbar-track {
-    background-color: lightgrey;
+    background-color: white;
 }
 
 .wrapper {
@@ -267,187 +268,113 @@ ul {
 
 /* * global navigation: end */
 
-/* * banner: begin */
-.banner {
-    display: flex;
-    flex-direction: column-reverse;
-    padding-top: 2em;
-    height: 100vh;
-    background-color: #F0F7F7;
+
+main {
+    padding-top: 2.6em;
 }
 
-.banner__left,
-.banner__right {
+/* * slide image : begin*/
+
+.slide-image {
     position: relative;
+    height: 18em;
+    max-height: 100vh;
     overflow: hidden;
 }
 
-.banner__left {
-    flex: 2;
-    flex-shrink: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-h1 {
-    font-size: 1.5rem;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--textColor);
-    letter-spacing: 0.1em;
-}
-
-h1~p {
-    font-style: italic;
-    font-size: 0.9rem;
-}
-
-.banner__right {
-    flex: 3;
-    flex-shrink: 2;
-    position: relative;
-}
-
-.banner__right::before {
-    content: '';
+.slide-image img {
     position: absolute;
-    top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
-}
-
-.banner__slide {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
-    width: 100%;
-    overflow: hidden;
-    transition: 0.5s;
-}
-
-.banner__slide .text {
-    color: white;
-    text-align: center;
-    position: absolute;
-    z-index: 20;
-    transition: 1s;
-    opacity: 0;
-}
-
-.banner__right .text--large {
-    text-transform: uppercase;
-    left: 50%;
-    bottom: 2em;
-    font-size: 1.2rem;
-}
-
-.banner__right .text--small {
-    right: 50%;
-    font: 0.7rem;
-    bottom: 1em;
-}
-
-.translate.text--large {
-    transform: translateX(-50%);
-    opacity: 1;
-}
-
-.translate.text--small {
-    transform: translateX(50%);
-    opacity: 1;
-}
-
-.banner__slide img {
-    width: 100%;
-    min-height: 100%;
+    min-width: 100%;
     object-fit: cover;
-}
-
-.button {
-    background-color: white;
-    border: none;
-    font-size: 0.8rem;
-    padding: 0.3em 0.7em;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.banner__left .button {
-    border: 2px solid dodgerblue;
-    color: dodgerblue;
-    padding: 0.5em 0.8em;
-    margin-top: 1em;
     transition: 0.3s;
 }
 
-.banner__left .button:hover {
-    background-color: dodgerblue;
-    color: white;
+.slide-image .button {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 1em;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s;
 }
 
-/* * banner: end */
+.slide-image .full_screen_btns .button {
+    left: 1em;
+}
+
+.slide-image .pause_slide_btns .button {
+    left: 4em;
+}
+
+.gallery-image {
+    height: 4.5em;
+    display: flex;
+    gap: 0.1em;
+    overflow: auto;
+    padding-top: 0.1em;
+}
+
+.gallery-image .image-box {
+    height: 100%;
+    width: 5.5em;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.gallery-image .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+
+/* * slide image : end*/
+
+/* * main content */
+.current_product__disc {
+    padding: 0.5em;
+}
+
+h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1em 0;
+}
 
 h2 {
-    padding-top: 0.5em;
-    padding-bottom: 1em;
+    font-size: 1.1rem;
 }
 
-section {
-    padding-bottom: 3em;
+.current_product__disc ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
 }
 
-/**how it works: begin*/
-.work {
-    padding: 0.7em 0.5em;
-    min-height: 15em;
+.current_product__disc * {
+    line-height: 1.5;
 }
 
-.work__steps {
-    display: grid;
-    gap: 1em;
-}
-
-.work__card {
-    display: flex;
-    align-items: center;
-    padding: 1em;
-    border: 1px solid grey;
-    border-radius: 1em;
-    background-color: white;
-}
-
-.work__card--search i {
-    color: #ff9a01;
-}
-
-.work__card--contact i {
+::marker {
     color: dodgerblue;
 }
 
-.work__card--agree i {
-    color: #027D7C;
-}
 
-.work__card>p {
-    margin-left: 1em;
-    font-size: 1rem;
-}
 
-.work__card>i {
-    padding: 0.6em;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 50%;
-    border: 1px solid currentColor;
-}
 
-/**how it works: end */
+
+
+
+
+
+
+
 /* * product: begin */
 .product {
     padding: 1em 1em;
@@ -474,47 +401,34 @@ section {
     color: white;
 }
 
-
 .tab__content {
-    height: max-content;
+    display: flex;
 }
 
 .filter {
-    align-self: flex-start;
-    padding: 1em;
-    max-height: max-content;
-    margin-bottom: 0.5em;
+    flex: 1;
+    padding: 0.5em;
+    margin-right: 0.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid grey;
     box-shadow: 4px 4px 4px lightgrey;
-    background-color: white;
-}
-
-
-.filter_list {
-    flex-grow: 0;
-    display: grid;
-    justify-content: center;
-    column-gap: 2em;
-    grid-template-columns: 1fr 1fr;
-}
-
-@media screen and (max-width: 37.5em) {
-    .filter_list {
-        grid-template-columns: 1fr;
-    }
 }
 
 .filter .filter_list__item {
-    margin-top: 1em;
+    margin: 1.5em 0;
     position: relative;
-    padding-left: 1em;
 }
 
-.filter * {
-    font-size: 1.2rem;
+.filter .filter_list__item::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: dodgerblue;
+    bottom: calc(100% + 0.75em);
+    left: 10%;
+    right: 10%;
 }
 
 .filter .inputbox {
@@ -533,14 +447,16 @@ section {
     cursor: pointer;
 }
 
-.filter_list__item .button {
+.filter .button {
     background-color: #d86767;
     color: white;
+    transform: translateX(50%);
     margin-top: 0.5em;
 }
 
 .product .product_list {
     display: none;
+    flex: 4;
 }
 
 .product .product_list.is-show {
@@ -571,22 +487,24 @@ section {
     overflow: hidden;
 }
 
-.tab__sell .card__content span.type {
+.tab__sell .card__image::before {
+    content: 'Bán';
     background-color: rgb(248, 120, 98);
 }
 
-.tab__rent .card__content span.type {
+.tab__rent .card__image::before {
+    content: 'Thuê';
     background-color: mediumseagreen;
 }
 
-.tab__sell .card__content span.type,
-.tab__rent .card__content span.type {
+.tab__sell .card__image::before,
+.tab__rent .card__image::before {
     color: white;
     font-weight: bold;
     position: absolute;
-    top: 0;
-    right: 0.5em;
-    padding: 1em 0.5em;
+    top: 0.2em;
+    right: 0.2em;
+    padding: 0.5em 1em;
     z-index: 100;
 }
 
@@ -816,14 +734,9 @@ section {
 
 
 
-
 }
 
-@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-    .filter_list {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
 
 @media screen and (min-width: 63.9375em) {
 
@@ -875,40 +788,76 @@ section {
         display: none;
     }
 
-    .banner {
-        flex-direction: row;
-    }
-
-    .tab__content {
+    .current_product {
         display: flex;
         flex-direction: row-reverse;
-        gap: 0.5em;
     }
 
-    .filter {
-        max-width: 15em;
-    }
-    .filter_list {
-        grid-template-columns: 1fr;
-    }
-
-
-
-    .filter .filter_list__item {
-        padding-left: 1em;
+    .current_product__image {
+        flex: 3;
+        overflow: hidden;
+        position: relative;
+        height: 100vh;
     }
 
-    .filter .filter_list__item * {
-        font-size: 0.9rem;
+    .slide-image .button:hover {
+        transform: rotate(180deg);
     }
 
-    .product {
-        padding: 1em 0.5em;
+    .gallery-image {
+        position: absolute;
+        top: 1em;
+        right: 0.2em;
+        height: 100%;
+        flex-direction: column;
+        gap: 0.4em;
+
+    }
+
+    .gallery-image::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .gallery-image .image-box {
+        width: 3em;
+        height: 3em;
+        transition: 0.3s;
+        border: 3px solid white;
+    }
+
+    .gallery-image .image-box:hover {
+        opacity: 0.6;
+    }
+
+    .current_product__disc {
+        flex: 2;
+    }
+
+    .slide-image {
+        height: 100vh;
+    }
+
+    .current_image {
+        opacity: 0;
+    }
+
+    .current_image.animate {
+        animation: current_image 0.3s 15s;
+    }
+
+    @keyframes current_image {
+        to {
+            opacity: 1;
+        }
+
     }
 
     .product_list {
         grid-template-columns: 1fr;
-        flex: 1;
+    }
+
+    .product {
+        padding: 1em 0.5em;
     }
 
     .product__card {

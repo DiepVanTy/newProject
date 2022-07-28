@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="../asset/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../asset/fontawesome/css/">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../asset/js/jquery.js"></script>
+    <script src="../asset/js/main.js"></script>
+</head>
+
+<body onscroll="toggleHeader()">
+    <div class="wrapper">
+        <header id="header" class="flex-center-between">
+            <a class="logo" href="../index.html">real estate</a>
+            <nav class="desktop_navigation ">
+                <ul class="navigation__list-link ">
+                    <li><a href="#" class="navigation__link active">Trang chủ</a></li>
+                    <li><a href="#" class="navigation__link">Sản phẩm cho thuê</a></li>
+                    <li><a href="#" class="navigation__link">Sản phẩm bán</a></li>
+                    <li><a href="./pages/contactpage.html" class="navigation__link">Thông tin liên hệ</a></li>
+                </ul>
+            </nav>
+            <a class="phone_num flex-center-between" href="tel:0394002409"><i
+                    class="fa-solid fa-phone"><span></span></i><span>0394002409</span></a>
+            <!-- https://www.flaticon.com/free-icon/whatsapp_2111728?related_id=2111728&origin=search# -->
+            <div class=" menu__icon">
+                <div class="icon__bar icon__bar--1"></div>
+                <div class="icon__bar icon__bar--2"></div>
+                <div class="icon__bar icon__bar--3"></div>
+            </div>
+        </header>
+        <a href="#current_product" onclick="toggleButtonToTop()" class="to-top"><i class="fa-solid fa-arrow-up"></i></a>
+        <nav class="mobile_navigation ">
+
+            <ul class="navigation__list-link">
+                <li><a class="logo" href="./index.html" style="color: white ;">real estate</a></li>
+                <li><a href="#" class="navigation__link">Trang chủ</a></li>
+                <li><a href="#" class="navigation__link">Sản phẩm cho thuê</a></li>
+                <li><a href="#" class="navigation__link">Sản phẩm bán</a></li>
+                <li><a href="#" class="navigation__link">Thông tin liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div id="current_product" class="current_product">
+                <div class="current_product__image">
+                    <div class="slide-image">
+                        <div class="full_screen_btns">
+                            <button class="button flex-center" onclick="fullscreen(0, this)"><i
+                                    class="fa-solid fa-down-left-and-up-right-to-center"></i></button>
+
+                            <button class="button flex-center" onclick="fullscreen(1, this)"><i
+                                    class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+                        </div>
+                        <div class="pause_slide_btns">
+                            <button class="button flex-center" onclick="continueSlide()"><i
+                                    class="fa-solid fa-circle-pause"></i></button>
+                        </div>
+                        <img class="slide_items" src="../image/banner-image-2.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-3.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-4.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-5.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-1.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-2.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-3.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-4.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-5.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-1.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-2.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-3.jpg" alt="">
+                        <img class="slide_items" src="../image/banner-image-4.jpg" alt="">
+                        <img class="current_image" src="" alt="">
+                    </div>
+                    <div class="gallery-image">
+                        <div class="image-box"><img src="../image/banner-image-2.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-3.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-4.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-5.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-1.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-2.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-3.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-4.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-5.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-1.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-2.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-3.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-4.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="current_product__disc">
+                    <h1>Cần bán căn hộ tầng 3 loại 2PN 69m2 (nhìn ra khuôn viên xanh) Botanica Premier giá tốt 3.835 tỷ
+                    </h1>
+                    <h2>Vị trí:</h2>
+                    <p class="address"> Botanica Premier, 108, Đường Hồng Hà, Phường 2, Tân Bình, Hồ Chí Minh</p>
+                    <h2>Thông tin mô tả</h2>
+                    <p class="infomation">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus natus ipsam unde nulla ad,
+                        rem repellendus laborum. Eos, exercitationem suscipit.
+                    </p>
+
+                    <ul>
+                        <li>Mức giá: <span>3.5 tỷ.</span></li>
+                        <li>Diện tích: <span>69</span>m<sup>2</sup>.</li>
+                        <li>Nội thất: <span>Nhà mới, đẹp</span>.</li>
+                        <li>Số phòng ngủ: <span>3</span> phòng.</li>
+                        <li>Số phòng tắm: <span>2</span> phòng.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <!-- <footer class="footer">
+            <div class="footer__left">
+                <a style="color: white;" class="logo" href="./index.html">real estate</a>
+                <h3>Kết nối:</h3>
+                <ul class="footer__left__contact">
+                    <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="#"><img class="zalo-icon" src="image/zalo-icon.svg" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="footer__right"></div>
+        </footer> -->
+    </div>
+
+    <script>
+        // product page 
+        function silde_image(index, is_slide) {
+
+            let images = document.querySelectorAll('.slide-image .slide_items');
+            function slide() {
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.opacity = 0;
+                }
+
+                images[index].style.opacity = 1;
+                index++;
+                if (index == images.length) {
+                    index = 0;
+                }
+                const timeOut = setTimeout(slide, 2500);
+            }
+            slide();
+        };
+        silde_image(0, 1);
+
+
+        // chooseImage from gallery
+        const gallery_images = document.querySelectorAll('.gallery-image img');
+        let currentimage = document.querySelector('.slide-image .current_image');
+        for (let i = 0; i < gallery_images.length; i++) {
+            gallery_images[i].addEventListener('click', function () {
+                currentimage.style.opacity = 1;
+                path = this.src;
+                currentimage.src = path;
+            })
+        }
+        function continueSlide() {
+            // currentimage.style.opacity = 0;
+            silde_image(0, 0);
+
+        }
+        function fullscreen(is_full, currentButton) {
+            let elem = document.getElementsByClassName("current_product__image")[0];
+            let fullScreenButton = document.querySelectorAll('.full_screen_btns .button');
+            for (let i = 0; i < 2; i++) {
+                fullScreenButton[i].style.display = 'flex'
+            }
+            currentButton.style.display = 'none';
+            if (is_full == 1) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            }
+            else if (is_full == 0) {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

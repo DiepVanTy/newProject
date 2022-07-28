@@ -1,16 +1,27 @@
 // toggle header: begin
-(function toggleHeader() {
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("header").style.transform = "translateY(0)";
-    } else {
-      document.getElementById("header").style.transform = "translateY(-100%)";
-    }
-    prevScrollpos = currentScrollPos;
-  };
-})();
+// (function toggleHeader() {
+//   let prevScrollpos = window.pageYOffset;
+//   window.onscroll = function () {
+//     let currentScrollPos = window.pageYOffset;
+//     if (prevScrollpos > currentScrollPos) {
+//       document.getElementById("header").style.transform = "translateY(0)";
+//     } else {
+//       document.getElementById("header").style.transform = "translateY(-100%)";
+//     }
+//     prevScrollpos = currentScrollPos;
+//   };
+// })();
+
+let prevScrollpos = window.pageYOffset;
+function toggleHeader() {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.transform = "translateY(0)";
+  } else {
+    document.getElementById("header").style.transform = "translateY(-100%)";
+  }
+  prevScrollpos = currentScrollPos;
+}
 // toggle header: end
 
 // menu_icon: begin
@@ -25,10 +36,10 @@ $(document).ready(function () {
 // tab : begin.
 function tabShow(element, classNameOfTabContent) {
   let tab_btns = document.querySelectorAll(".tab__buttons .button");
-  let tab_content = document.querySelectorAll(".tab__content");
+  let product_list = document.querySelectorAll(".product_list");
   for (let i = 0; i < tab_btns.length; i++) {
     tab_btns[i].classList.remove("active");
-    tab_content[i].classList.remove("is-show");
+    product_list[i].classList.remove("is-show");
     element.classList.add("active");
     document
       .getElementsByClassName(classNameOfTabContent)[0]
@@ -61,3 +72,23 @@ let bannerImage = () => {
   }
 };
 bannerImage();
+
+// load up effect: begin
+function reveal() {
+  let cards = document.querySelectorAll(".product__card");
+
+  for (let i = 0; i < cards.length; i++) {
+    let windowHeight = window.innerHeight;
+    let elementTop = cards[i].getBoundingClientRect().top;
+    let elementVisible = 200;
+
+    if (elementTop < windowHeight + elementVisible) {
+      cards[i].classList.add("load_up");
+    } else {
+      cards[i].classList.remove("load_up");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+// load up effect: end

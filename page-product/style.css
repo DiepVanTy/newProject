@@ -5,10 +5,10 @@
     font-size: calc(1vw + 0.8em);
     --textColor: rgba(0, 0, 0, 0.7);
     --textColor: rgba(0, 0, 0, 0.7);
-    --zindexOfFilter: 30;
     --zindexOfHeader: 20;
+    --zindexOfToTop: 30;
+    --zindexOfModalImage: 40;
     --zindexOfNavigation: 50;
-    --zindexOfToTop: 40
 }
 
 *,
@@ -292,30 +292,52 @@ main {
     transition: 0.3s;
 }
 
-.slide-image .button {
-    font-size: 1.2rem;
-    position: absolute;
-    top: 1em;
-    height: 2em;
-    width: 2em;
-    border-radius: 50%;
-    z-index: 10;
+.modal_image {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    overflow: hidden;
+    transform: scaleY(0);
+    z-index: var(--zindexOfModalImage);
     transition: 0.3s;
 }
 
-.slide-image .full_screen_btns .button {
-    left: 1em;
+.modal_image .button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    height: 1.7em;
+    width: 1.7em;
+    padding: 0.1em;
+    transition: 0.3s;
 }
 
-.slide-image .pause_slide_btns .button {
-    left: 4em;
+.modal_image .button:hover {
+    transform: rotate(90deg);
 }
+
+.modal_image>img {
+    max-width: 85%;
+    max-height: 90%;
+    padding: 5em 0;
+    object-fit: cover;
+    transition: 0.3s;
+
+}
+
+
 
 .gallery-image {
+    overflow: auto;
     height: 4.5em;
     display: flex;
     gap: 0.1em;
-    overflow: auto;
     padding-top: 0.1em;
 }
 
@@ -333,7 +355,12 @@ main {
     cursor: pointer;
 }
 
-
+.modal_image .gallery-image {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.2em;
+    right: 0.2em;
+}
 
 /* * slide image : end*/
 
@@ -804,6 +831,10 @@ h2 {
         transform: rotate(180deg);
     }
 
+    .modal_image>img {
+        padding: 1em;
+    }
+
     .gallery-image {
         position: absolute;
         top: 1em;
@@ -811,6 +842,7 @@ h2 {
         height: 100%;
         flex-direction: column;
         gap: 0.4em;
+        width: max-content;
 
     }
 
@@ -835,21 +867,6 @@ h2 {
 
     .slide-image {
         height: 100vh;
-    }
-
-    .current_image {
-        opacity: 0;
-    }
-
-    .current_image.animate {
-        animation: current_image 0.3s 15s;
-    }
-
-    @keyframes current_image {
-        to {
-            opacity: 1;
-        }
-
     }
 
     .product_list {

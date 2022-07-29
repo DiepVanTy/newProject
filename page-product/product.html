@@ -57,10 +57,6 @@
                             <button class="button flex-center" onclick="fullscreen(1, this)"><i
                                     class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
                         </div>
-                        <div class="pause_slide_btns">
-                            <button class="button flex-center" onclick="continueSlide()"><i
-                                    class="fa-solid fa-circle-pause"></i></button>
-                        </div>
                         <img class="slide_items" src="../image/banner-image-2.jpg" alt="">
                         <img class="slide_items" src="../image/banner-image-3.jpg" alt="">
                         <img class="slide_items" src="../image/banner-image-4.jpg" alt="">
@@ -74,8 +70,26 @@
                         <img class="slide_items" src="../image/banner-image-2.jpg" alt="">
                         <img class="slide_items" src="../image/banner-image-3.jpg" alt="">
                         <img class="slide_items" src="../image/banner-image-4.jpg" alt="">
-                        <img class="current_image" src="" alt="">
                     </div>
+                    <div class="gallery-image">
+                        <div class="image-box"><img src="../image/banner-image-2.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-3.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-4.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-5.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-1.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-2.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-3.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-4.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-5.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-1.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-2.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-3.jpg" alt=""></div>
+                        <div class="image-box"><img src="../image/banner-image-4.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="modal_image flex-center">
+                    <button class="button flex-center" onclick="this.parentElement.style.transform = 'scaleX(0)';"><i class="fa-solid fa-xmark"></i></button>
+                    <img src="" alt="">
                     <div class="gallery-image">
                         <div class="image-box"><img src="../image/banner-image-2.jpg" alt=""></div>
                         <div class="image-box"><img src="../image/banner-image-3.jpg" alt=""></div>
@@ -129,69 +143,33 @@
     </div>
 
     <script>
-        // product page 
-        function silde_image(index, is_slide) {
-
-            let images = document.querySelectorAll('.slide-image .slide_items');
-            function slide() {
-                for (let i = 0; i < images.length; i++) {
-                    images[i].style.opacity = 0;
-                }
-
-                images[index].style.opacity = 1;
-                index++;
-                if (index == images.length) {
-                    index = 0;
-                }
-                const timeOut = setTimeout(slide, 2500);
+        let indexOfSlide = 0;
+        function mainSlide() {
+            let slideImages = document.querySelectorAll('.current_product__image .slide_items')
+            for (let eachImage of slideImages) {
+                eachImage.style.opacity = 0;
             }
-            slide();
-        };
-        silde_image(0, 1);
-
+            slideImages[indexOfSlide].style.opacity = 1;
+            indexOfSlide++;
+            if (indexOfSlide == slideImages.length) {
+                indexOfSlide = 0;
+            }
+            setTimeout(mainSlide, 3000);
+        }
+        mainSlide();
 
         // chooseImage from gallery
         const gallery_images = document.querySelectorAll('.gallery-image img');
-        let currentimage = document.querySelector('.slide-image .current_image');
+        let currentimage = document.querySelector('.modal_image img');
         for (let i = 0; i < gallery_images.length; i++) {
             gallery_images[i].addEventListener('click', function () {
+                document.querySelector('.modal_image').style.transform = 'scaleX(1)';
                 currentimage.style.opacity = 1;
                 path = this.src;
                 currentimage.src = path;
             })
         }
-        function continueSlide() {
-            // currentimage.style.opacity = 0;
-            silde_image(0, 0);
 
-        }
-        function fullscreen(is_full, currentButton) {
-            let elem = document.getElementsByClassName("current_product__image")[0];
-            let fullScreenButton = document.querySelectorAll('.full_screen_btns .button');
-            for (let i = 0; i < 2; i++) {
-                fullScreenButton[i].style.display = 'flex'
-            }
-            currentButton.style.display = 'none';
-            if (is_full == 1) {
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                } else if (elem.webkitRequestFullscreen) { /* Safari */
-                    elem.webkitRequestFullscreen();
-                } else if (elem.msRequestFullscreen) { /* IE11 */
-                    elem.msRequestFullscreen();
-                }
-            }
-            else if (is_full == 0) {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) { /* Safari */
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) { /* IE11 */
-                    document.msExitFullscreen();
-                }
-
-            }
-        }
     </script>
 
 </body>

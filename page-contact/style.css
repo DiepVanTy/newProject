@@ -230,7 +230,7 @@ ul {
 
 .mobile_navigation .navigation__link {
     color: #f7f7f7;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 /* * global navigation: end */
@@ -290,7 +290,7 @@ h2 {
     width: 100%;
     height: 100%;
     border: 1px solid grey;
-    outline: none;`
+    outline: none;
     border-radius: 0.3em;
 }
 
@@ -421,6 +421,10 @@ main>.map {
 /* *footer: end */
 /* *media query: begin */
 @media screen and (min-width: 46.25em) {
+    :root {
+        font-size: calc(1vw + 0.5em);
+    }
+
     a.phone_num>span {
         display: inline;
     }
@@ -444,7 +448,7 @@ main>.map {
     }
 
     .desktop_navigation .navigation__link {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
         position: relative;
     }
 
@@ -502,6 +506,6 @@ main>.map {
 
     main>.map {
         flex: 3;
-        height: calc(100vh - 3.2em) ;
+        height: calc(100vh - 3.2em);
     }
 }

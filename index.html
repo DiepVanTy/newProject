@@ -14,14 +14,14 @@
 </head>
 
 <body onscroll="toggleHeader();">
-    <div class="wrapper" >
+    <div class="wrapper">
         <header id="header" class="flex-center-between">
             <a class="logo" href="./index.html">real estate</a>
             <nav class="desktop_navigation ">
                 <ul class="navigation__list-link ">
-                    <li><a href="#" class="navigation__link active">Trang chủ</a></li>
-                    <li><a href="#" class="navigation__link">Sản phẩm cho thuê</a></li>
-                    <li><a href="#" class="navigation__link">Sản phẩm bán</a></li>
+                    <li><a href="./index.html" class="navigation__link active">Trang chủ</a></li>
+                    <li><a href="#product" class="navigation__link" onclick="sellOrRent('sell')">Căn hộ bán</a></li>
+                    <li><a href="#product" class="navigation__link" onclick="sellOrRent('rent')">Căn hộ cho thuê</a></li>
                     <li><a href="./page-contact/contactpage.html" class="navigation__link">Thông tin liên hệ</a></li>
                 </ul>
             </nav>
@@ -40,9 +40,9 @@
             <ul class="navigation__list-link">
                 <li><a class="logo" href="./index.html" style="color: white ;">real estate</a></li>
                 <li><a href="#" class="navigation__link">Trang chủ</a></li>
-                <li><a href="#" class="navigation__link">Sản phẩm cho thuê</a></li>
-                <li><a href="#" class="navigation__link">Sản phẩm bán</a></li>
-                <li><a href="#" class="navigation__link">Thông tin liên hệ</a></li>
+                <li><a href="#" class="navigation__link">Căn hộ bán</a></li>
+                <li><a href="#" class="navigation__link">Căn hộ cho thuê</a></li>
+                <li><a href="./page-contact/contactpage.html" class="navigation__link">Thông tin liên hệ</a></li>
             </ul>
         </nav>
         <!-- banner: begin -->
@@ -50,7 +50,10 @@
             <div class="banner__left">
                 <h1>Lorem, ipsum dolor.</h1>
                 <p>Lorem ipsum dolor sit amet.</p>
-                <a href="#product" class="button">Bắt đầu</a>
+                <div class="banner__buttons">
+                    <a href="#product" class="button active" onclick="sellOrRent('sell')">Mua</a>
+                    <a href="#product" class="button" onclick="sellOrRent('rent')">Thuê</a>
+                </div>
             </div>
             <div class="banner__right">
                 <div class="banner__slide">
@@ -117,62 +120,62 @@
                             <ul class="filter_list">
                                 <li class="filter_list__item">
                                     <h4>Loại</h4>
-                                    <div class="inputbox">
-                                        <input type="radio" id="type-1" name="type">
-                                        <label for="type-1">Bán</label><br>
-                                    </div>
-                                    <div class="inputbox">
+                                    <label class="input_box" for="type-1">Bán
+                                        <input type="radio" id="type-1" name="type" checked="checked">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="input_box" for="type-2">Thuê
                                         <input type="radio" id="type-2" name="type">
-                                        <label for="type-2">Thuê</label>
-                                    </div>
+                                        <span class="checkmark"></span>
+                                    </label>
                                     <button class="button">Bỏ chọn</button>
                                 </li>
                                 <li class="filter_list__item">
                                     <h4>Mức giá</h4>
-                                    <div class="inputbox">
+                                    <label class="input_box" for="cost-1">1 - 2 tỷ
                                         <input type="radio" id="cost-1" name="cost">
-                                        <label for="cost-1">1 - 2 tỷ</label><br>
-                                    </div>
-                                    <div class="inputbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="input_box" for="cost-2">3 - 4 tỷ
                                         <input type="radio" id="cost-2" name="cost">
-                                        <label for="cost-2">3 - 4 tỷ</label>
-                                    </div>
+                                        <span class="checkmark"></span>
+                                    </label>
                                     <button class="button">Bỏ chọn</button>
                                 </li>
                                 <li class="filter_list__item">
                                     <h4>Vị trí</h4>
-                                    <div class="inputbox">
+                                    <label class="input_box" for="position-1">Quận 1
                                         <input type="radio" id="position-1" name="position">
-                                        <label for="position-1">Quận 1</label><br>
-                                    </div>
-                                    <div class="inputbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="input_box" for="position-2">Quận 2
                                         <input type="radio" id="position-2" name="position">
-                                        <label for="position-2">Quận 2</label>
-                                    </div>
+                                        <span class="checkmark"></span>
+                                    </label>
                                     <button class="button">Bỏ chọn</button>
                                 </li>
                                 <li class="filter_list__item">
                                     <h4>Số phòng ngủ</h4>
-                                    <div class="inputbox">
+                                    <label class="input_box" for="bedroom-1">1 - 3 phòng
                                         <input type="radio" id="bedroom-1" name="bedroom">
-                                        <label for="bedroom-1">1 - 3 phòng</label><br>
-                                    </div>
-                                    <div class="inputbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="input_box" for="bedroom-2">4 - 6 phòng
                                         <input type="radio" id="bedroom-2" name="bedroom">
-                                        <label for="bedroom-2">4 - 6 phòng</label>
-                                    </div>
+                                        <span class="checkmark"></span>
+                                    </label>
                                     <button class="button">Bỏ chọn</button>
                                 </li>
                                 <li class="filter_list__item">
                                     <h4>Số nhà tắm</h4>
-                                    <div class="inputbox">
+                                    <label class="input_box" for="bathroom-1">1 - 2 phòng
                                         <input type="radio" id="bathroom-1" name="bathroom">
-                                        <label for="bathroom-1">1 - 2 phòng</label><br>
-                                    </div>
-                                    <div class="inputbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="input_box" for="bathroom-2">3 - 4 phòng
                                         <input type="radio" id="bathroom-2" name="bathroom">
-                                        <label for="bathroom-2">3 - 4 phòng</label>
-                                    </div>
+                                        <span class="checkmark"></span>
+                                    </label>
                                     <button class="button">Bỏ chọn</button>
                                 </li>
                             </ul>
@@ -324,7 +327,7 @@
                                             <img src="image/area-icon.JPG" alt="" class="image-icon">
                                             <p>69 m<sup>2</sup> </p>
                                         </div>
-                            
+
                                     </div>
                                 </div>
                             </a>
@@ -420,6 +423,17 @@
     //     }
     //     productCard();
     // </script> -->
+    <script> 
+        function sellOrRent(typeProduct) {
+            let products =  document.querySelectorAll('.product__tab .tab__buttons .button');
+            if (typeProduct == 'sell') {
+                products[0].click();
+            } else if (typeProduct == 'rent') {
+                products[1].click();
+            }
+                
+        }
+    </script>
 </body>
 
 </html>

@@ -19,10 +19,10 @@
             <a class="logo" href="../index.html">real estate</a>
             <nav class="desktop_navigation ">
                 <ul class="navigation__list-link ">
-                    <li><a href="#" class="navigation__link active">Trang chủ</a></li>
-                    <li><a href="#" class="navigation__link">Sản phẩm cho thuê</a></li>
-                    <li><a href="#" class="navigation__link">Sản phẩm bán</a></li>
-                    <li><a href="./pages/contactpage.html" class="navigation__link">Thông tin liên hệ</a></li>
+                    <li><a href="../index.html" class="navigation__link ">Trang chủ</a></li>
+                    <li><a href="#" class="navigation__link active">Căn hộ bán</a></li>
+                    <li><a href="#" class="navigation__link">Căn hộ cho thuê</a></li>
+                    <li><a href="../page-contact/contactpage.html" class="navigation__link">Thông tin liên hệ</a></li>
                 </ul>
             </nav>
             <a class="phone_num flex-center-between" href="tel:0394002409"><i
@@ -38,16 +38,16 @@
         <nav class="mobile_navigation ">
 
             <ul class="navigation__list-link">
-                <li><a class="logo" href="./index.html" style="color: white ;">real estate</a></li>
-                <li><a href="#" class="navigation__link">Trang chủ</a></li>
-                <li><a href="#" class="navigation__link">Sản phẩm cho thuê</a></li>
-                <li><a href="#" class="navigation__link">Sản phẩm bán</a></li>
-                <li><a href="#" class="navigation__link">Thông tin liên hệ</a></li>
+                <li><a class="logo" href="../index.html" style="color: white ;">real estate</a></li>
+                <li><a href="../index.html" class="navigation__link">Trang chủ</a></li>
+                <li><a href="#" class="navigation__link">Căn hộ bán án</a></li>
+                <li><a href="#" class="navigation__link">Căn hộ cho huê</a></li>
+                <li><a href="../page-contact/contactpage.html" class="navigation__link">Thông tin liên hệ</a></li>
             </ul>
         </nav>
 
         <main>
-            <div id="current_product" class="current_product">
+            <section id="current_product" class="current_product">
                 <div class="current_product__image">
                     <div class="slide-image">
                         <div class="full_screen_btns">
@@ -88,7 +88,8 @@
                     </div>
                 </div>
                 <div class="modal_image flex-center">
-                    <button class="button flex-center" onclick="this.parentElement.style.transform = 'scaleX(0)';"><i class="fa-solid fa-xmark"></i></button>
+                    <button class="button flex-center" onclick="this.parentElement.style.transform = 'scaleX(0)';"><i
+                            class="fa-solid fa-xmark"></i></button>
                     <img src="" alt="">
                     <div class="gallery-image">
                         <div class="image-box"><img src="../image/banner-image-2.jpg" alt=""></div>
@@ -107,14 +108,16 @@
                     </div>
                 </div>
                 <div class="current_product__disc">
-                    <h1>Cần bán căn hộ tầng 3 loại 2PN 69m2 (nhìn ra khuôn viên xanh) Botanica Premier giá tốt 3.835 tỷ
+                    <h1>Căn hộ tầng 3 loại 2PN 69m<sup>2</sup> Botanica Premier giá tốt 3.835 tỷ
                     </h1>
-                    <h2>Vị trí:</h2>
-                    <p class="address"> Botanica Premier, 108, Đường Hồng Hà, Phường 2, Tân Bình, Hồ Chí Minh</p>
-                    <h2>Thông tin mô tả</h2>
+                    <h2>Mô tả: </h2>
+
+                    <p class="address">Vị trí: Botanica Premier, 108, Đường Hồng Hà, Phường 2, Tân Bình, Hồ Chí Minh</p><br>
                     <p class="infomation">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus natus ipsam unde nulla ad,
                         rem repellendus laborum. Eos, exercitationem suscipit.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quam reprehenderit enim doloribus
+                        esse exercitationem architecto? Quibusdam nihil vero molestias!
                     </p>
 
                     <ul>
@@ -125,7 +128,254 @@
                         <li>Số phòng tắm: <span>2</span> phòng.</li>
                     </ul>
                 </div>
-            </div>
+            </section>
+            <section class="view_map">
+                <h2 class="view-on-map">Xem trên bản đồ</h2>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31094.09129491249!2d109.30226767216435!3d13.050853117450929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zdHJ1bmcgaOG7jWMgcGjhu5UgdGjDtG5nIG5nw7QgZ2lhIHThu7E!5e0!3m2!1svi!2s!4v1658624771460!5m2!1svi!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+            <!--related products-->
+            <section class="related_products">
+                <!--product: begin-->
+                <div class="product">
+                    <h2>Sản phẩm liên quan</h2>
+                    <div class="product__tab">
+                        <div class="tab__content">
+                            <!--Sell : begin-->
+                            <div class="filter">
+                                <p><b>BỘ LỌC</b></p>
+                                <ul class="filter_list">
+                                    <li class="filter_list__item">
+                                        <h4>Loại</h4>
+                                        <label class="input_box" for="type-1">Bán
+                                            <input type="radio" id="type-1" name="type" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="input_box" for="type-2">Thuê
+                                            <input type="radio" id="type-2" name="type">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <button class="button">Bỏ chọn</button>
+                                    </li>
+                                    <li class="filter_list__item">
+                                        <h4>Mức giá</h4>
+                                        <label class="input_box" for="cost-1">1 - 2 tỷ
+                                            <input type="radio" id="cost-1" name="cost">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="input_box" for="cost-2">3 - 4 tỷ
+                                            <input type="radio" id="cost-2" name="cost">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <button class="button">Bỏ chọn</button>
+                                    </li>
+                                    <li class="filter_list__item">
+                                        <h4>Vị trí</h4>
+                                        <label class="input_box" for="position-1">Quận 1
+                                            <input type="radio" id="position-1" name="position">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="input_box" for="position-2">Quận 2
+                                            <input type="radio" id="position-2" name="position">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <button class="button">Bỏ chọn</button>
+                                    </li>
+                                    <li class="filter_list__item">
+                                        <h4>Số phòng ngủ</h4>
+                                        <label class="input_box" for="bedroom-1">1 - 3 phòng
+                                            <input type="radio" id="bedroom-1" name="bedroom">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="input_box" for="bedroom-2">4 - 6 phòng
+                                            <input type="radio" id="bedroom-2" name="bedroom">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <button class="button">Bỏ chọn</button>
+                                    </li>
+                                    <li class="filter_list__item">
+                                        <h4>Số nhà tắm</h4>
+                                        <label class="input_box" for="bathroom-1">1 - 2 phòng
+                                            <input type="radio" id="bathroom-1" name="bathroom">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="input_box" for="bathroom-2">3 - 4 phòng
+                                            <input type="radio" id="bathroom-2" name="bathroom">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <button class="button">Bỏ chọn</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product_list">
+                                <!-- card sell: begin -->
+                                <a href="./page-product/product.html" target="_blank" class="product__card card_sell">
+                                    <div class="card__image card__image_1  ">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <img class="slide_image" src="../image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <img class="slide_image" src="../image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
+                                        <div class="hover-overlay flex-center">
+                                            <p>Chi tiết</p>
+                                        </div>
+                                    </div>
+                                    <div class="card__content">
+                                        <span class="type">Bán</span>
+                                        <p class="cost">3.5 tỷ</p>
+                                        <h4>Lorem ipsum dolor sit.</h4>
+                                        <p>“Dummy text of the printing and”</p>
+                                        <div class="line">
+                                            <span class="circle circle--1"></span>
+                                            <span class="circle circle--2"></span>
+                                            <span class="circle circle--3"></span>
+                                        </div>
+                                        <div class="card__footer">
+                                            <div class="col-33">
+                                                <img src="../image/bed-icon.jpg" alt="" class="image-icon">
+                                                <p>3</p>
+                                            </div>
+                                            <div class="col-33">
+                                                <img src="../image/bathtub.png" alt="" class="image-icon">
+                                                <p>2</p>
+                                            </div>
+                                            <div class="col-33">
+                                                <img src="../image/area-icon.JPG" alt="" class="image-icon">
+                                                <p>69 m<sup>2</sup> </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="./page-product/product.html" target="_blank" class="product__card card_sell">
+                                    <div class="card__image card__image_1  ">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <img class="slide_image" src="../image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <img class="slide_image" src="../image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
+                                        <div class="hover-overlay flex-center">
+                                            <p>Chi tiết</p>
+                                        </div>
+                                    </div>
+                                    <div class="card__content">
+                                        <span class="type">Bán</span>
+                                        <p class="cost">3.5 tỷ</p>
+                                        <h4>Lorem ipsum dolor sit.</h4>
+                                        <p>“Dummy text of the printing and”</p>
+                                        <div class="line">
+                                            <span class="circle circle--1"></span>
+                                            <span class="circle circle--2"></span>
+                                            <span class="circle circle--3"></span>
+                                        </div>
+                                        <div class="card__footer">
+                                            <div class="col-33">
+                                                <img src="../image/bed-icon.jpg" alt="" class="image-icon">
+                                                <p>3</p>
+                                            </div>
+                                            <div class="col-33">
+                                                <img src="../image/bathtub.png" alt="" class="image-icon">
+                                                <p>2</p>
+                                            </div>
+                                            <div class="col-33">
+                                                <img src="../image/area-icon.JPG" alt="" class="image-icon">
+                                                <p>69 m<sup>2</sup> </p>
+                                            </div>
+                                
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="./page-product/product.html" target="_blank" class="product__card card_sell">
+                                    <div class="card__image card__image_1  ">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <img class="slide_image" src="../image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <img class="slide_image" src="../image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
+                                        <div class="hover-overlay flex-center">
+                                            <p>Chi tiết</p>
+                                        </div>
+                                    </div>
+                                    <div class="card__content">
+                                        <span class="type">Bán</span>
+                                        <p class="cost">3.5 tỷ</p>
+                                        <h4>Lorem ipsum dolor sit.</h4>
+                                        <p>“Dummy text of the printing and”</p>
+                                        <div class="line">
+                                            <span class="circle circle--1"></span>
+                                            <span class="circle circle--2"></span>
+                                            <span class="circle circle--3"></span>
+                                        </div>
+                                        <div class="card__footer">
+                                            <div class="col-33">
+                                                <img src="../image/bed-icon.jpg" alt="" class="image-icon">
+                                                <p>3</p>
+                                            </div>
+                                            <div class="col-33">
+                                                <img src="../image/bathtub.png" alt="" class="image-icon">
+                                                <p>2</p>
+                                            </div>
+                                            <div class="col-33">
+                                                <img src="../image/area-icon.JPG" alt="" class="image-icon">
+                                                <p>69 m<sup>2</sup> </p>
+                                            </div>
+                                
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- card sell: end -->
+
+                                <!-- card rent: begin -->
+                                <a href="./index.html" target="_blank" class="product__card card_rent">
+                                    <div class="card__image">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <img class="slide_image" src="../image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <img class="slide_image" src="../image/Dinh-nghia-can-ho-apartment2.jpg" alt="">
+                                        <img class="slide_image" src="../image/demo-apartment.jpg" alt="">
+                                        <div class="hover-overlay flex-center">
+                                            <p>Chi tiết</p>
+                                        </div>
+                                    </div>
+                                    <div class="card__content">
+                                        <span class="type">Thuê</span>
+                                        <p class="cost">3.5 tỷ</p>
+                                        <h4>Lorem ipsum dolor sit.</h4>
+                                        <p>“Dummy text of the printing and”</p>
+                                        <div class="line">
+                                            <span class="circle circle--1"></span>
+                                            <span class="circle circle--2"></span>
+                                            <span class="circle circle--3"></span>
+                                        </div>
+                                        <div class="card__footer">
+                                            <div class="col-33">
+                                                <img src="../image/bed-icon.jpg" alt="" class="image-icon">
+                                                <p>3</p>
+                                            </div>
+                                            <div class="col-33">
+                                                <img src="../image/bathtub.png" alt="" class="image-icon">
+                                                <p>2</p>
+                                            </div>
+                                            <div class="col-33">
+                                                <img src="../image/area-icon.JPG" alt="" class="image-icon">
+                                                <p>69 m<sup>2</sup> </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- card rent: end -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button button--radius button--more">Xem thêm <i
+                            class="fa-solid fa-arrow-right"></i></button>
+
+                </div>
+
+                <!--product: end-->
+            </section>
         </main>
         <!-- <footer class="footer">
             <div class="footer__left">
@@ -135,7 +385,7 @@
                     <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                     <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
-                    <li><a href="#"><img class="zalo-icon" src="image/zalo-icon.svg" alt=""></a></li>
+                    <li><a href="#"><img class="zalo-icon" src="../image/zalo-icon.svg" alt=""></a></li>
                 </ul>
             </div>
             <div class="footer__right"></div>
